@@ -1,0 +1,631 @@
+{
+  "id": "b0b00000-0000-4000-8000-000000000078",
+  "version": "2.0",
+  "name": "Weather App Regression",
+  "url": "https://weather-puce-six.vercel.app",
+  "tests": [
+    {
+      "id": "7e570000-0000-4000-8000-000000000070",
+      "name": "TC01 Home page loads",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000001",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000002",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000003",
+          "comment": "",
+          "command": "assertTitle",
+          "target": "Weather Forecast",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000004",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=heading",
+          "targets": [],
+          "value": "Weather Forecast"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000005",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=city",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000006",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000007",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=curr_loc",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "7e570000-0000-4000-8000-000000000071",
+      "name": "TC02 Search a valid city",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000008",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000009",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000010",
+          "comment": "",
+          "command": "type",
+          "target": "id=city",
+          "targets": [],
+          "value": "London"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000011",
+          "comment": "",
+          "command": "click",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000012",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=today",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000013",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=search_val",
+          "targets": [],
+          "value": "glob:*London*"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000014",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=curr_temp",
+          "targets": [],
+          "value": "glob:*°C"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000015",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=hum_val",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000016",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=w_speed_val",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000017",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=cloud_val",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000018",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=pressure_now",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "7e570000-0000-4000-8000-000000000072",
+      "name": "TC03 Hourly forecast pagination",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000019",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000020",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000021",
+          "comment": "",
+          "command": "type",
+          "target": "id=city",
+          "targets": [],
+          "value": "London"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000022",
+          "comment": "",
+          "command": "click",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000023",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=today",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000024",
+          "comment": "",
+          "command": "click",
+          "target": "id=hourly_temp",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000025",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=main_stats",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000026",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#stat1 .time",
+          "targets": [],
+          "value": "0000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000027",
+          "comment": "",
+          "command": "click",
+          "target": "id=next",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000028",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#stat1 .time",
+          "targets": [],
+          "value": "0800"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000029",
+          "comment": "",
+          "command": "click",
+          "target": "id=next",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000030",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#stat1 .time",
+          "targets": [],
+          "value": "1600"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000031",
+          "comment": "",
+          "command": "click",
+          "target": "id=prev",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000032",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#stat1 .time",
+          "targets": [],
+          "value": "0800"
+        }
+      ]
+    },
+    {
+      "id": "7e570000-0000-4000-8000-000000000073",
+      "name": "TC04 Hourly parameter buttons",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000033",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000034",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000035",
+          "comment": "",
+          "command": "type",
+          "target": "id=city",
+          "targets": [],
+          "value": "London"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000036",
+          "comment": "",
+          "command": "click",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000037",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=today",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000038",
+          "comment": "",
+          "command": "click",
+          "target": "id=hourly_w_speed",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000039",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#stat .hourly_parameter",
+          "targets": [],
+          "value": "Wind Speed"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000040",
+          "comment": "",
+          "command": "click",
+          "target": "id=hourly_c_cover",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000041",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#stat .hourly_parameter",
+          "targets": [],
+          "value": "Cloud Cover"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000042",
+          "comment": "",
+          "command": "click",
+          "target": "id=hourly_humidity",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000043",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#stat .hourly_parameter",
+          "targets": [],
+          "value": "glob:Relative*"
+        }
+      ]
+    },
+    {
+      "id": "7e570000-0000-4000-8000-000000000074",
+      "name": "TC05 Seven day forecast",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000044",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000045",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000046",
+          "comment": "",
+          "command": "type",
+          "target": "id=city",
+          "targets": [],
+          "value": "London"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000047",
+          "comment": "",
+          "command": "click",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000048",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=today",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000049",
+          "comment": "",
+          "command": "click",
+          "target": "id=get7",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000050",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=daily",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000051",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=day1",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000052",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=day7",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "7e570000-0000-4000-8000-000000000075",
+      "name": "TC06 Invalid city shows error",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000053",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000054",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000055",
+          "comment": "",
+          "command": "type",
+          "target": "id=city",
+          "targets": [],
+          "value": "zzzzqq"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000056",
+          "comment": "",
+          "command": "click",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000057",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=today",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000058",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=today",
+          "targets": [],
+          "value": "Error in fetching data"
+        }
+      ]
+    },
+    {
+      "id": "7e570000-0000-4000-8000-000000000076",
+      "name": "TC07 Empty search shows error",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000059",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000060",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000061",
+          "comment": "",
+          "command": "click",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000062",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=today",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000063",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=today",
+          "targets": [],
+          "value": "Error in fetching data"
+        }
+      ]
+    },
+    {
+      "id": "7e570000-0000-4000-8000-000000000077",
+      "name": "TC08 Mobile layout",
+      "commands": [
+        {
+          "id": "c0de0000-0000-4000-8000-000000000064",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000065",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "375x812",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000066",
+          "comment": "",
+          "command": "type",
+          "target": "id=city",
+          "targets": [],
+          "value": "London"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000067",
+          "comment": "",
+          "command": "click",
+          "target": "id=search_button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000068",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=today",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "c0de0000-0000-4000-8000-000000000069",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "id=search_val",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "5017e000-0000-4000-8000-000000000079",
+      "name": "Weather Regression Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "7e570000-0000-4000-8000-000000000070",
+        "7e570000-0000-4000-8000-000000000071",
+        "7e570000-0000-4000-8000-000000000072",
+        "7e570000-0000-4000-8000-000000000073",
+        "7e570000-0000-4000-8000-000000000074",
+        "7e570000-0000-4000-8000-000000000075",
+        "7e570000-0000-4000-8000-000000000076",
+        "7e570000-0000-4000-8000-000000000077"
+      ]
+    }
+  ],
+  "urls": [
+    "https://weather-puce-six.vercel.app/"
+  ],
+  "plugins": []
+}
